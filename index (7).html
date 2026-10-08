@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRICK OR TREAT! | Halloween Night</title>
+<style>
+:root{font-family:system-ui,'Malgun Gothic',sans-serif;color:#fff4df;background:#160e2d;font-synthesis:none}*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 50% 5%,#4f2967 0,#231439 48%,#100a20 100%)}button{font:inherit;cursor:pointer}button:focus-visible,.candy:focus-visible{outline:3px solid #ffcf59;outline-offset:4px}.wrap{width:min(1100px,100%);margin:auto;padding:24px 18px 46px}.mast{text-align:center}.eyebrow{color:#ffbf68;letter-spacing:.25em;font-size:12px;font-weight:900}.mast h1{font-size:clamp(35px,7vw,73px);margin:5px 0 2px;color:#ffc36b;text-shadow:4px 5px 0 #7d3068;letter-spacing:.035em}.subtitle{margin:0 0 24px;color:#c9b6dc}.topbar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}.chip{background:#35214f;border:1px solid #735586;padding:11px 17px;border-radius:12px;font-weight:800}.chip strong{color:#ffd67c}.layout{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:17px}.scene{position:relative;overflow:hidden;min-height:465px;border:3px solid #9168a1;border-radius:22px;background:linear-gradient(#45336f 0%,#4f3470 49%,#251932 50%,#24172e 100%);box-shadow:0 20px 40px #08051077}.stars{position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(#f6d5a5 1.5px,transparent 1.5px);background-size:59px 67px;opacity:.5}.moon{position:absolute;right:35px;top:28px;width:80px;height:80px;border-radius:50%;background:#f7cf8a;box-shadow:0 0 45px #f7cf8a66}.door{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:min(72%,370px);height:88%;background:#2b1b37;border:12px solid #66415b;border-bottom:0;border-radius:165px 165px 0 0;box-shadow:inset 0 0 0 6px #1b152e,0 0 35px #160c2d}.door:after{content:'✦';position:absolute;right:20px;top:56%;color:#f8cc83;font-size:32px}.visitor{position:absolute;left:50%;bottom:105px;transform:translateX(-50%);font-size:clamp(115px,19vw,190px);line-height:1;filter:drop-shadow(0 15px 8px #0007);animation:bob 1.5s ease-in-out infinite;user-select:none}.visitor[hidden]{display:none}@keyframes bob{50%{transform:translate(-50%,-8px)}}.speech{position:absolute;left:50%;top:23px;transform:translateX(-50%);z-index:2;width:min(90%,470px);padding:13px 16px;text-align:center;background:#fff5da;color:#352044;border:3px solid #ffcb80;border-radius:17px;font-weight:800;box-shadow:0 8px 0 #261631}.speech[hidden]{display:none}.speech small{display:block;font-size:12px;font-weight:500;margin-top:4px}.basket{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);width:min(75%,310px);height:105px;display:flex;align-items:center;justify-content:center;gap:5px;flex-wrap:wrap;padding:30px 10px 8px;border:5px dashed #e8ad59;border-radius:15px 15px 43px 43px;background:#84512fdd;color:#fff3ce;font-weight:900;text-align:center;z-index:3;transition:.15s}.basket.active{background:#bb7133;border-color:#fff1a8;scale:1.04}.basket[hidden]{display:none}.basket .placed{font-size:28px}.feedback{position:absolute;inset:0;display:grid;place-items:center;z-index:7;pointer-events:none;font-size:clamp(60px,12vw,105px);font-weight:1000;letter-spacing:.04em;text-shadow:0 7px 0 #201124,0 0 22px #201124}.feedback[hidden]{display:none}.feedback.good{color:#80ff9b}.feedback.fail{color:#ff6e85}.side{display:flex;flex-direction:column;gap:14px}.panel{background:#302044;border:2px solid #6b4b84;border-radius:17px;padding:19px}.panel h2{margin:0 0 12px;color:#ffc878;font-size:18px}.panel p{margin:8px 0;line-height:1.55;font-size:14px;color:#e1d2e6}.progress{height:13px;background:#1a1129;border:1px solid #816398;border-radius:50px;overflow:hidden}.progress>div{height:100%;width:100%;background:linear-gradient(90deg,#ff727f,#ffc66f);transition:width .1s linear}.action{width:100%;padding:17px 10px;background:#ec5877;color:white;border:0;border-radius:12px;font-weight:1000;font-size:20px;box-shadow:0 6px 0 #8e3454}.action:disabled{opacity:.4;cursor:not-allowed}.action:active:not(:disabled){transform:translateY(3px);box-shadow:0 3px 0 #8e3454}.tray{margin-top:17px;padding:17px;border:2px solid #79508e;border-radius:20px;background:#332147}.tray h2{margin:0 0 13px;font-size:18px;color:#ffcb7d}.candies{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px}.candy{border:2px solid #a77bb0;border-radius:13px;background:#50345f;color:#fff6e6;padding:13px 5px 11px;touch-action:none;user-select:none;cursor:grab;display:flex;align-items:center;flex-direction:column;gap:6px;min-width:0;font-size:13px;font-weight:800}.candy span{font-size:clamp(26px,4vw,42px)}.candy:disabled{opacity:.35;cursor:not-allowed}.candy.selected{outline:3px solid #ffca6f;background:#795179}.dragging{position:fixed;z-index:100;pointer-events:none;font-size:55px;transform:translate(-50%,-50%);filter:drop-shadow(0 6px 6px #0008)}.bottom{text-align:center;margin-top:20px}.primary{background:#fbbf6b;color:#2a153b;border:none;border-radius:12px;padding:15px 28px;font-size:18px;font-weight:1000;box-shadow:0 5px 0 #bf793e}.secondary{margin-left:8px;background:transparent;border:2px solid #bd92bb;border-radius:12px;color:#ffe9d1;padding:13px 22px;font-weight:800}.rules{margin-top:20px;background:#2a1b3b;border:1px solid #6e5083;border-radius:14px;padding:15px 20px;line-height:1.8;color:#e9d5e8;font-size:14px}.rules strong{color:#ffc66b}.overlay{position:fixed;inset:0;z-index:30;background:#0d081bcc;display:grid;place-items:center;padding:20px}.overlay[hidden]{display:none}.modal{max-width:570px;width:100%;padding:clamp(22px,5vw,39px);background:#342148;border:3px solid #d28d8f;border-radius:23px;box-shadow:0 20px 70px #0009;text-align:center}.modal h2{color:#ffc878;font-size:clamp(30px,6vw,47px);margin:0 0 10px}.modal p{line-height:1.8}.modal ul{text-align:left;line-height:1.9;padding-left:24px}.results{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:20px 0}.result{background:#241732;padding:13px 6px;border-radius:12px;border:1px solid #765788}.result b{display:block;color:#ffca76;font-size:34px}.result span{font-size:13px}.hint{font-size:12px;color:#ddc9e3}@media(max-width:720px){.layout{grid-template-columns:1fr}.scene{min-height:390px}.side{display:grid;grid-template-columns:1fr 1fr}.side .panel:last-child{grid-column:1/-1}.visitor{bottom:103px}.candies{gap:6px}.candy{font-size:11px;padding:11px 2px}.basket{height:95px}.wrap{padding-inline:12px}.scene{border-radius:15px}}@media(max-width:420px){.side{grid-template-columns:1fr}.side .panel:last-child{grid-column:auto}.scene{min-height:365px}.visitor{font-size:125px}.candy span{font-size:29px}}
+.rule-good{margin-top:10px;color:#80ff9b;font-size:20px;font-weight:900}.rule-fail{margin-top:10px;color:#ff6e85;font-size:20px;font-weight:900}.rule-good span,.rule-fail span{font-size:13px;font-weight:500}.visitor img{max-width:100%;max-height:190px;object-fit:contain}.candy img,.placed img{height:42px;width:42px;object-fit:contain}.dragging img{height:55px;width:55px;object-fit:contain}.unlock{font-size:11px;color:#fbd28b}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="mast"><div class="eyebrow">HALLOWEEN NIGHT · THE FRONT DOOR</div><h1>🎃 TRICK OR TREAT!</h1><p class="subtitle">몬스터일까 손님일까?</p></header>
+<div class="topbar"><div class="chip">🌙 남은 게임 시간 <strong id="gameTime">03:00</strong></div><div class="chip">🚪 방문자 <strong id="visits">0</strong>명</div><div class="chip">⭐ 성공 <strong id="totalSuccess">0</strong>명</div></div>
+<div class="layout"><section class="scene" aria-label="집 앞 방문자"><div class="stars"></div><div class="moon"></div><div class="door"></div><div class="speech" id="speech" hidden></div><div class="visitor" id="visitor" hidden></div><div class="basket" id="basket" hidden aria-label="손님의 바구니">🧺 바구니에 간식을 넣으세요!</div><div class="feedback" id="feedback" hidden aria-live="assertive"></div></section>
+<aside class="side"><section class="panel"><h2>⏳ 제한 시간</h2><div class="progress" aria-label="남은 제한 시간"><div id="progress"></div></div><p id="roundText">시작 버튼을 누르면 손님이 찾아옵니다.</p></section><section class="panel"><button class="action" id="kick" type="button" disabled>🚫 내쫓기!</button></section><section class="panel"><h2>📋 주문 현황</h2><p id="orderText">손님이 오면 주문이 표시됩니다.</p></section></aside></div>
+<section class="tray"><h2>🍬 간식 진열대 <span style="font-size:12px;color:#d7bbd7;font-weight:500">— 드래그하거나 간식을 클릭한 다음 바구니 클릭</span></h2><div class="candies" id="candies"></div></section>
+<div class="bottom"><button class="secondary" id="reset" type="button" disabled>↻ 다시 시작하기</button></div>
+<section class="rules"><strong>🎮 조작법</strong>
+<div><b>게임 시작</b>을 누르면 3분 동안 방문자가 랜덤하게 등장합니다.</div>
+<div class="rule-good"><b>GOOD!</b> <span>(성공)</span></div>
+<div>• 몬스터: <b>내쫓기</b> 버튼 클릭</div>
+<div>• 손님: 손님이 요구하는 간식을 바구니에 모두 넣기</div>
+<div class="rule-fail"><b>FAIL!</b> <span>(실패)</span></div>
+<div>• 틀린 간식을 넣거나 시간 초과</div>
+<div>• 손님을 잘못 내쫓거나 몬스터에게 간식을 준 경우도 실패</div>
+<div>3분이 끝나면 자동 종료되며 결과가 표시됩니다. 언제든 <b>다시 시작하기</b>로 처음부터 시작할 수 있어요.</div>
+</section>
+</div>
+<div class="overlay" id="overlay"><div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><h2 id="modalTitle">🎃 TRICK OR TREAT!</h2><div id="modalBody"><p><b>몬스터일까 손님일까?</b><br>3분 동안 집에 찾아오는 몬스터/손님을 내쫓거나 대접하세요!</p>
+<ul><li>👻 몬스터: 제한 시간 안에 <b>내쫓기!</b></li><li>🍬 손님: 요구한 2~4종류의 간식을 모두 바구니에!</li><li>⚠️ 몬스터도 주문하는 척해요. 모습을 보고 구분하세요!</li><li>🎃 1분, 2분이 지나면 새로운 간식이 추가됩니다.</li></ul>
+<p class="hint">PC: 드래그 / 모바일: 터치 드래그 · 간식을 클릭한 뒤 바구니를 눌러도 됩니다.</p></div><button id="modalButton" class="primary" type="button">▶ 게임 시작</button></div></div>
+<div class="overlay" id="confirmOverlay" hidden><div class="modal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle"><h2 id="confirmTitle">↻ 다시 시작할까요?</h2><p>현재 플레이 기록이 초기화됩니다.<br>정말 처음부터 다시 시작할까요?</p><button class="primary" id="confirmYes" type="button">다시 시작</button><button class="secondary" id="confirmNo" type="button">계속 플레이</button></div></div>
+<script>
+'use strict';
+const $ = id => document.getElementById(id);
+
+// === 이모지를 내가 만든 그림으로 바꾸는 방법 ===
+// image: '' 대신 image: 'images/파일이름.png'를 입력하세요.
+// 예: { id:'ghost', emoji:'👻', image:'images/ghost.png' }
+// images 폴더와 해당 그림 파일도 GitHub에 함께 업로드해야 합니다.
+const candyData = [
+  {id:'chocolate',name:'초콜릿',emoji:'🍫',image:'',unlock:0},
+  {id:'lollipop',name:'막대사탕',emoji:'🍭',image:'',unlock:0},
+  {id:'hard',name:'알사탕',emoji:'🍬',image:'',unlock:0},
+  {id:'eyeball',name:'눈알젤리',emoji:'👁️',image:'',unlock:0},
+  {id:'corn',name:'캔디 콘',emoji:'🌽',image:'',unlock:0},
+  {id:'pumpkin',name:'호박 사탕',emoji:'🎃',image:'',unlock:60000},
+  {id:'skull',name:'해골 젤리',emoji:'💀',image:'',unlock:120000}
+];
+const ghosts = [
+  {name:'몬스터',emoji:'👻',image:''},
+  {name:'뱀파이어',emoji:'🧛',image:''},
+  {name:'좀비',emoji:'🧟',image:''},
+  {name:'프랑켄슈타인',emoji:'🧟‍♂️',image:''}
+];
+// 모두 인간 손님. 의상만 다르게 표현합니다.
+const guests = [
+  {name:'평범한 손님',emoji:'🧑',image:''},
+  {name:'마녀 코스튬 손님',emoji:'🧑‍🎓',image:''},
+  {name:'왕관 코스튬 손님',emoji:'👩',image:''},
+  {name:'모험가 코스튬 손님',emoji:'🧑‍🚀',image:''},
+  {name:'히어로 코스튬 손님',emoji:'🦸',image:''}
+];
+const ROUND_MS=8000, GAME_MS=180000, FEEDBACK_MS=950;
+let state='ready',current=null,selected=null,stats=blankStats();
+let gameEndsAt=0,roundEndsAt=0,timer=null,nextTimer=null,visits=0,drag=null;
+let pauseStartedAt=0,feedbackEndsAt=0,feedbackRemaining=0;
+function blankStats(){return {orders:0,ghosts:0,wrongKick:0,failedOrders:0};}
+function rand(list){return list[Math.floor(Math.random()*list.length)];}
+function view(item){
+  if(item.image){const img=document.createElement('img');img.src=item.image;img.alt=item.name;return img;}
+  const span=document.createElement('span');span.textContent=item.emoji;return span;
+}
+function addView(el,item){el.appendChild(view(item));}
+function availableCandies(){
+  const elapsed=GAME_MS-Math.max(0,gameEndsAt-performance.now());
+  return candyData.filter(c=>elapsed>=c.unlock);
+}
+function updateUnlockCountdown(){
+  // 정지 확인 팝업 동안에는 게임 시간이 흐르지 않습니다.
+  const now=pauseStartedAt || performance.now();
+  const elapsed=state==='ready' ? 0 : Math.max(0,GAME_MS-Math.max(0,gameEndsAt-now));
+  for(const c of candyData){
+    if(!c.unlock)continue;
+    const label=document.querySelector(`.candy[data-id="${c.id}"] .unlock`);
+    if(label)label.textContent=`${Math.max(0,Math.ceil((c.unlock-elapsed)/1000))}초 뒤 해금`;
+  }
+}
+function drawCandies(){
+  $('candies').replaceChildren();
+  for(const c of candyData){
+    const btn=document.createElement('button');btn.type='button';btn.className='candy';btn.dataset.id=c.id;
+    addView(btn,c);btn.append(document.createTextNode(c.name));
+    const unlocked=state!=='ready' && (GAME_MS-Math.max(0,gameEndsAt-performance.now()))>=c.unlock;
+    if(!unlocked&&c.unlock){const lock=document.createElement('small');lock.className='unlock';lock.textContent=`${Math.max(0,Math.ceil((c.unlock-(state==='ready'?0:GAME_MS-Math.max(0,gameEndsAt-(pauseStartedAt||performance.now()))))/1000))}초 뒤 해금`;btn.append(lock);}
+    btn.disabled=state!=='playing'||!unlocked;
+    btn.addEventListener('pointerdown',e=>startDrag(e,c));
+    btn.addEventListener('click',()=>{
+      if(state!=='playing'||!unlocked)return;
+      selected=c.id;
+      document.querySelectorAll('.candy').forEach(el=>el.classList.toggle('selected',el.dataset.id===c.id));
+    });
+    $('candies').append(btn);
+  }
+}
+function startDrag(e,c){
+  if(state!=='playing'||(e.pointerType==='mouse'&&e.button!==0)||!availableCandies().some(x=>x.id===c.id))return;
+  const point={id:e.pointerId,x:e.clientX,y:e.clientY,moved:false,view:null};drag=point;
+  const move=ev=>{
+    if(drag!==point||ev.pointerId!==point.id)return;
+    if(!point.moved&&Math.hypot(ev.clientX-point.x,ev.clientY-point.y)>8){
+      point.moved=true;point.view=document.createElement('div');point.view.className='dragging';addView(point.view,c);document.body.append(point.view);
+    }
+    if(point.view){point.view.style.left=ev.clientX+'px';point.view.style.top=ev.clientY+'px';$('basket').classList.toggle('active',!!document.elementFromPoint(ev.clientX,ev.clientY)?.closest('#basket'));}
+  };
+  function cleanup(){window.removeEventListener('pointermove',move);window.removeEventListener('pointerup',end);window.removeEventListener('pointercancel',cancel);point.view?.remove();$('basket').classList.remove('active');if(drag===point)drag=null;}
+  const end=ev=>{if(ev.pointerId!==point.id)return;const hit=point.moved&&!!document.elementFromPoint(ev.clientX,ev.clientY)?.closest('#basket');cleanup();if(hit)giveCandy(c.id);};
+  const cancel=ev=>{if(ev.pointerId===point.id)cleanup();};
+  window.addEventListener('pointermove',move);window.addEventListener('pointerup',end);window.addEventListener('pointercancel',cancel);
+}
+$('basket').addEventListener('click',()=>{if(selected)giveCandy(selected);});
+function giveCandy(id){
+  if(state!=='playing')return;
+  selected=null;document.querySelectorAll('.candy').forEach(b=>b.classList.remove('selected'));
+  // 몬스터도 주문하지만 간식을 주면 실패. 몬스터은 반드시 내쫓아야 함.
+  if(current.type==='ghost'){finishRound(false,'몬스터에게 간식을 줬어요!');return;}
+  if(!current.wants.includes(id)||current.given.includes(id)){stats.failedOrders++;finishRound(false,'잘못된 간식이에요!');return;}
+  current.given.push(id);renderOrder();
+  if(current.given.length===current.wants.length){stats.orders++;finishRound(true,'주문 완료!');}
+}
+function renderOrder(){
+  if(!current)return;
+  $('orderText').textContent=current.wants.map(id=>{const c=candyData.find(x=>x.id===id);return `${current.given.includes(id)?'✅':'▫️'} ${c.emoji} ${c.name}`;}).join(' / ');
+  $('basket').replaceChildren();
+  if(!current.given.length)$('basket').textContent='🧺 여기로 드래그!';
+  else for(const id of current.given){const el=document.createElement('span');el.className='placed';addView(el,candyData.find(x=>x.id===id));$('basket').append(el);}
+}
+function setClock(){const n=Math.max(0,Math.ceil((gameEndsAt-performance.now())/1000));$('gameTime').textContent=`${String(Math.floor(n/60)).padStart(2,'0')}:${String(n%60).padStart(2,'0')}`;}
+function nextVisitor(){
+  if(state==='over')return;
+  if(performance.now()>=gameEndsAt){endGame();return;}
+  state='playing';selected=null;visits++;$('visits').textContent=visits;
+  const ghost=Math.random()<.4;
+  const candies=availableCandies().sort(()=>Math.random()-.5);
+  current={type:ghost?'ghost':'guest',character:rand(ghost?ghosts:guests),wants:candies.slice(0,2+Math.floor(Math.random()*3)).map(c=>c.id),given:[]};
+  roundEndsAt=Math.min(gameEndsAt,performance.now()+ROUND_MS);
+  $('visitor').replaceChildren();addView($('visitor'),current.character);$('visitor').hidden=false;
+  $('visitor').setAttribute('aria-label',current.character.name);
+  $('speech').hidden=false;$('speech').innerHTML='🍬 Trick or Treat!<small>아래 주문에 맞춰 간식을 주세요!</small>';
+  $('feedback').hidden=true;$('basket').hidden=false;$('kick').disabled=false;
+  $('roundText').textContent='방문자를 보고 판단하세요!';
+  renderOrder();drawCandies();updateUI();
+}
+function finishRound(good,reason){
+  if(state!=='playing')return;
+  state='feedback';$('feedback').textContent=good?'GOOD!':'FAIL!';$('feedback').className='feedback '+(good?'good':'fail');$('feedback').hidden=false;
+  $('roundText').textContent=reason;$('kick').disabled=true;drawCandies();$('totalSuccess').textContent=stats.orders+stats.ghosts;
+  feedbackEndsAt=performance.now()+FEEDBACK_MS;
+  nextTimer=setTimeout(()=>performance.now()>=gameEndsAt?endGame():nextVisitor(),FEEDBACK_MS);
+}
+let lastUnlockCount=5;
+function updateUI(){
+  if(state==='over'||state==='ready'||pauseStartedAt)return;
+  setClock();if(performance.now()>=gameEndsAt){endGame();return;}
+  const count=availableCandies().length;if(count!==lastUnlockCount){lastUnlockCount=count;drawCandies();}
+  updateUnlockCountdown();
+  if(state==='playing'){
+    const left=roundEndsAt-performance.now();$('progress').style.width=Math.max(0,100*left/ROUND_MS)+'%';
+    if(left<=0){if(current.type==='guest')stats.failedOrders++;finishRound(false,'제한 시간이 초과됐어요!');}
+  }
+}
+function startGame(){
+  clearInterval(timer);clearTimeout(nextTimer);pauseStartedAt=0;feedbackRemaining=0;$('confirmOverlay').hidden=true;stats=blankStats();visits=0;state='playing';current=null;selected=null;
+  gameEndsAt=performance.now()+GAME_MS;lastUnlockCount=5;
+  $('overlay').hidden=true;$('reset').disabled=false;$('visits').textContent='0';$('totalSuccess').textContent='0';$('gameTime').textContent='03:00';
+  nextVisitor();timer=setInterval(updateUI,50);
+}
+function endGame(){
+  if(state==='over')return;
+  clearInterval(timer);clearTimeout(nextTimer);state='over';$('gameTime').textContent='00:00';$('progress').style.width='0%';
+  $('kick').disabled=true;$('reset').disabled=true;$('feedback').hidden=true;drawCandies();
+  $('modalTitle').textContent='🌙 GAME OVER!';
+  $('modalBody').innerHTML=`<p>할로윈 밤이 끝났어요! 오늘의 기록을 확인하세요.</p><div class="results"><div class="result"><b>${stats.orders}</b><span>🍬 성공한 손님 주문</span></div><div class="result"><b>${stats.ghosts}</b><span>👻 내쫓은 몬스터</span></div><div class="result"><b>${stats.wrongKick}</b><span>🚫 잘못 내쫓은 손님</span></div><div class="result"><b>${stats.failedOrders}</b><span>💔 실패한 손님 주문</span></div></div><p class="hint">※ 실패한 주문은 잘못된 간식 및 시간 초과를 포함합니다. 몬스터를 놓치거나 몬스터에게 간식을 준 경우는 별도 집계하지 않습니다.</p>`;
+  $('modalButton').textContent='↻ 다시 시작하기';$('overlay').hidden=false;
+}
+$('kick').addEventListener('click',()=>{
+  if(state!=='playing')return;
+  if(current.type==='ghost'){stats.ghosts++;finishRound(true,'몬스터를 내쫓았어요!');}
+  else{stats.wrongKick++;finishRound(false,'손님을 잘못 내쫓았어요!');}
+});
+$('modalButton').addEventListener('click',startGame);
+function requestRestart(){
+  if(state!=='playing'&&state!=='feedback')return;
+  pauseStartedAt=performance.now();
+  if(state==='feedback')feedbackRemaining=Math.max(0,feedbackEndsAt-pauseStartedAt);
+  clearTimeout(nextTimer);
+  updateUnlockCountdown();
+  $('confirmOverlay').hidden=false;
+  $('confirmNo').focus();
+}
+function cancelRestart(){
+  if(!pauseStartedAt)return;
+  const elapsed=performance.now()-pauseStartedAt;
+  gameEndsAt+=elapsed;roundEndsAt+=elapsed;
+  pauseStartedAt=0;
+  $('confirmOverlay').hidden=true;
+  if(state==='feedback'){
+    feedbackEndsAt=performance.now()+feedbackRemaining;
+    nextTimer=setTimeout(()=>performance.now()>=gameEndsAt?endGame():nextVisitor(),feedbackRemaining);
+  }
+  updateUnlockCountdown();
+  $('reset').focus();
+}
+$('reset').addEventListener('click',requestRestart);
+$('confirmYes').addEventListener('click',startGame);
+$('confirmNo').addEventListener('click',cancelRestart);
+$('progress').style.width='100%';drawCandies();
+</script>
+</body>
+</html>
